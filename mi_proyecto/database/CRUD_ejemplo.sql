@@ -14,10 +14,10 @@ values
 ;
 
 delete from jugadores
-where nombre = 'jose'
+where id_jugador = 1
 ;
 
 update jugadores
 set dorsal = 9
-where dorsal = 10
+where id_jugador = 1 
 ;
