@@ -17,7 +17,7 @@ services:
         target: /opt/back_end
     # Puertos enlazados:
     ports:
-        - "8080:8080"
+        - "8000:8000"
     # Control de consola:
     stdin_open: true
     tty: true
