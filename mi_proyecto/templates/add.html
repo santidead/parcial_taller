@@ -1,0 +1,22 @@
+
+{% load static %}
+ 
+    <a href="/players">Display</a>
+ 
+	<form method="POST" action="/players/inserted/"  id="myform" enctype="multipart/form-data">
+		{% csrf_token %}
+
+    <div>
+      <label for="txt1">Nombre</label>
+      <input type="text" name="txt1" >
+    </div>
+    <p></p>
+    <div>
+      <label for="dor1">Dorsal</label>
+      <input type="text" name="dor1" >
+    </div>
+    <p></p>
+        <button type="submit" >Agregar Jugador</button>
+	</form>
+</div>
+ 

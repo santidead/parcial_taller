@@ -1,0 +1,23 @@
+
+{% load static %}
+ 
+<a href="/players">Display</a>
+
+<form method="POST" action="/players/update/"  id="myform" enctype="multipart/form-data">
+    {% csrf_token %}
+
+     <input type="hidden" name="txt1" value="{{categories.0}}" >
+     <div>
+        <label for="txt2"> Nombre </label> 
+        <input type="text" name="txt2" value="{{categories.1}}">
+     </div>
+     <p></p>
+     <div>
+        <label for="dor2">Dorsal </label>
+        <input type="text" name="dor2" value="{{categories.2}}">
+     </div>
+     <p></p>
+    <button type="submit" >Editar jugador</button>
+</form>
+</div>
+

@@ -1,0 +1,45 @@
+version: "1.1"
+# Este es un archivo de docker-compose.yml para configurar el uso de contenedores de software.
+
+services:
+  prueba_django:
+    # Imágen a utilizar:
+    image: python:3.9.5
+    # Nombre del container:
+    container_name: prueba_djangoISDM
+    # Comportamiento ante fallos y al iniciar el sistema:
+    restart: always
+    # Carpetas enlazadas:
+    volumes:
+      # Source code directory:
+      - type: bind
+        source: .
+        target: /opt/back_end
+    # Puertos enlazados:
+    ports:
+        - "8080:8080"
+    # Control de consola:
+    stdin_open: true
+    tty: true
+    
+  db:
+    image: mysql
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 4444
+      MYSQL_DATABASE: Base_Ejemplo
+      MYSQL_USER: Castillos
+      MYSQL_PASSWORD: 12345678
+    ports:
+      - '3307:3306'
+  
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8090:80"
+    environment:
+      PMA_HOST: db
+    
